@@ -1,11 +1,11 @@
 # This script is used to check which images are currently used by the pod on k8s node.
 
 ```
-$ git clone https://github.com/cooloo9871/k8s-imagecheck.git;cd k8s-imagecheck/
+$ git clone https://github.com/cooloo9871/k8s-image_check.git; cd k8s-image_check/
 ```
 ## You need to run it on the master
 ```
-$ bash imagecheck.sh
+$ bash image_check.sh
 Node:m1
 gcr.io/k8s-staging-sig-storage/nfsplugin:canary
 registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.9.0
