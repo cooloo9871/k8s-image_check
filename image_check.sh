@@ -11,9 +11,9 @@ do
   for c in $ns
   do
     pod=$(kubectl get pods -n $c -o wide | grep -w $nn | tr -s \ -| cut -d ' ' -f1)
-    for n in $pod
+    for p in $pod
     do
-      kubectl -n $c get pod $n -o jsonpath='{.spec.containers[*].image}' | tr ' ' '\n' >> image.txt
+      kubectl -n $c get pod $p -o jsonpath='{.spec.containers[*].image}' | tr ' ' '\n' >> image.txt
       echo -e "\n" >> image.txt
     done
   done
