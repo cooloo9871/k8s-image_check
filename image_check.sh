@@ -10,7 +10,7 @@ do
   ns=$(kubectl get pods -A -o wide | grep -w $nn | tr -s \ - | cut -d ' ' -f1)
   for c in $ns
   do
-    pod=$(kubectl get pods -n $c -o wide | grep -w $nn | tr -s \ -| cut -d ' ' -f1)
+    pod=$(kubectl get pods -n $c -o wide | grep -w Running | grep -w $nn | tr -s \ -| cut -d ' ' -f1)
     for p in $pod
     do
       kubectl -n $c get pod $p -o jsonpath='{.spec.containers[*].image}' | tr ' ' '\n' >> image.txt
