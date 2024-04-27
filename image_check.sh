@@ -17,7 +17,7 @@ do
       echo -e "\n" >> image.txt
     done
   done
-  cat image.txt | grep -v '^$'
+  cat image.txt | grep -v '^$' | sort -n | uniq
   rm image.txt
   echo
 done
