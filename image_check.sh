@@ -6,7 +6,7 @@ NODENAME=$(kubectl get no -o name | cut -d '/' -f2)
 
 for nn in $NODENAME
 do
-  echo "Node:$nn"
+  echo "The images being used on Node:$nn"
   ns=$(kubectl get pods -A -o wide | grep -w "$nn" | tr -s \ - | cut -d ' ' -f1 | sort -n | uniq)
   for c in $ns
   do
